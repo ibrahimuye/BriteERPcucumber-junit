@@ -38,3 +38,4 @@ Feature: As an inventory user I should be able discard some of the available qua
 
 #  last phrase of the background is as same as first step of scenario to see that we all done in dry run
 #  we have extented step def classes to Browser utilities to use all useful methods
+#

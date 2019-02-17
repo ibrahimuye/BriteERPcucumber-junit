@@ -11,6 +11,8 @@ import org.junit.Assert;
 public class ScrapEntryTestsStepDefs extends BrowserUtils {
 
     Pages pages = new Pages();
+    private int initCount;
+    private int finCount;
 
     @Then("user clicks on the scrap link")
     public void user_clicks_on_the_scrap_link() {
@@ -27,10 +29,6 @@ public class ScrapEntryTestsStepDefs extends BrowserUtils {
     @Then("user clicks on the Create button")
     public void user_clicks_on_the_Create_button() {
         pages.scrapPage().createScrapOrderButton.click();
-    }
-
-    @Then("page title contains new")
-    public void page_title_contains_new() {
         wait(4);
         Assert.assertEquals("page title is wrong", "New - Odoo", Driver.getDriver().getTitle());
     }
@@ -39,7 +37,10 @@ public class ScrapEntryTestsStepDefs extends BrowserUtils {
     public void user_clicks_on_product_drop_down_menu_to_choose_a_product() {
         wait(4);
         pages.scrapPage().productBox.click();
-        pages.scrapPage().graphicsCard.click();
+        wait(4);
+        pages.scrapPage().searchMore.click();
+        wait(4);
+        pages.scrapPage().mouseOptical.click();
     }
 
     @Then("user uses default value of quantity")
@@ -52,13 +53,9 @@ public class ScrapEntryTestsStepDefs extends BrowserUtils {
         // nothing to do
     }
 
-    @Then("user clicks on save button")
-    public void user_clicks_on_save_button() {
+    @Then("user clicks on save button and then validate button")
+    public void user_clicks_on_save_button_and_then_validate_button() {
         pages.scrapPage().saveButton.click();
-    }
-
-    @Then("user clicks on validate button")
-    public void user_clicks_on_validate_button() {
         waitForClickablility(pages.scrapPage().validateButton, 5);
         pages.scrapPage().validateButton.click();
     }
@@ -68,5 +65,49 @@ public class ScrapEntryTestsStepDefs extends BrowserUtils {
         string = "to create a scrap entry, a source document is required";
 //        This is a reported bug, not to stop test at regular tests by Runner class, we commanded out for now
 //        Assert.assertTrue("error message is not on the page",pages.scrapPage().pageText.getText().contains(string));
+    }
+
+    @Then("user logs out")
+    public void user_logs_out() {
+        pages.scrapPage().visibleUserName.click();
+        pages.scrapPage().logoutLink.click();
+    }
+
+    @Then("Click on the Products link")
+    public void click_on_the_Products_link() {
+        waitForClickablility(pages.inventoryPage().productsLink, 5);
+        pages.inventoryPage().productsLink.click();
+        wait(4);
+        Driver.getDriver().navigate().refresh();
+
+    }
+
+    @Then("record the initial on hand quantity")
+    public int record_the_initial_on_hand_quantity() {
+        String initialCountOpticalMouse = pages.productsPage().opticalMouseOnHand.getText();
+        String [] initCountOpticalMouseWords=initialCountOpticalMouse.split(" ");
+        int initCountOpticalMouse = Integer.valueOf(initCountOpticalMouseWords [2].substring(0,3));
+        System.out.println("initial cunt is : "+initCountOpticalMouse);
+        initCount = initCountOpticalMouse;
+        return initCountOpticalMouse;
+    }
+
+    @Then("record the final on hand quantity")
+    public int record_the_final_on_hand_quantity() {
+//        waitForVisibility(pages.productsPage().opticalMouseOnHand,5);
+        String finalCountOpticalMouse = pages.productsPage().opticalMouseOnHand.getText();
+        String [] finalCountOpticalMouseWords=finalCountOpticalMouse.split(" ");
+        int finCountOpticalMouse = Integer.valueOf(finalCountOpticalMouseWords [2].substring(0,3));
+        System.out.println("final cunt is : "+finCountOpticalMouse);
+        finCount=finCountOpticalMouse;
+        return finCountOpticalMouse;
+    }
+
+    @Then("user validates the number of on hand quantity at this stage is less than initial amount by scrapped amount")
+    public void user_validates_the_number_of_on_hand_quantity_at_this_stage_is_less_than_initial_amount_by_scrapped_amount() {
+
+        System.out.println(initCount);
+        System.out.println(finCount);
+        Assert.assertTrue("number of products did not change",initCount-finCount==1);
     }
 }

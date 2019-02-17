@@ -27,6 +27,8 @@ public class ProductsPage extends HomePage {
     public WebElement crtCategoryCancelButton;
     @FindBy(xpath = "//button[@class='btn btn-primary btn-sm o_form_button_edit']")
     public WebElement productsEditButton;
+    @FindBy(xpath = "/html[1]/body[1]/div[1]/div[2]/div[2]/div[1]/div[1]/div[1]/div[3]/div[2]/ul[1]/li[2]")
+    public WebElement opticalMouseOnHand;
 
 
 //

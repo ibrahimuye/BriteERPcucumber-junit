@@ -11,7 +11,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features",
         glue = "com/inventory/step_defs"
         , dryRun = false,
-//        tags = "@yourtag",
+        tags = "@uc",
 
 //        plugin = {"html:target/Destination"},
         plugin = {

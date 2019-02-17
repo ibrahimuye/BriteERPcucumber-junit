@@ -16,7 +16,7 @@ Feature: As an inventory user I should be able discard some of the available qua
     Then the title should be Inventory
     Then the user is already on the inventory page
 
-  @BRIT-4020 @scrap
+  @BRIT-4020
   Scenario: As an inventory user I should not be able to create scrap entry without source document
 
     Given the user is already on the inventory page
@@ -38,7 +38,7 @@ Feature: As an inventory user I should be able discard some of the available qua
 #  last phrase of the background is as same as first step of scenario to see that we all done in dry run
 #  we have extented step def classes to Browser utilities to use all useful methods
 
-  @BRIT-4120 @scrap
+  @BRIT-4120
   Scenario: As an inventory user I should be able discard any of the available quantity of any Stock-able Product
   As an inventory user I should be able discard any of the available quantity of any Stock-able Product
 
@@ -57,7 +57,7 @@ Feature: As an inventory user I should be able discard some of the available qua
     Then user logs out
 
 
-  @BRIT-4121 @uc
+  @BRIT-4121
   Scenario Outline: As an inventory user I should be able to search scrap data using "product name"
   As an inventory user I should be able to search scrap data using product name
 
@@ -73,4 +73,18 @@ Feature: As an inventory user I should be able discard some of the available qua
       | product |
       | mouse   |
       | ipad    |
+
+
+  @BRIT-4122
+  Scenario: As an inventory user I should not be able to create scrap entry without quantity
+  As an inventory user I should not be able to create scrap entry without quantity
+
+    Given the user is already on the inventory page
+    Then user clicks on the scrap link
+    When the user is on the scrap page
+    Then user clicks on the Create button
+    And user enters zero for quantity
+    Then user clicks on product drop down menu to choose a product
+    Then user clicks on save button and then validate button
+    Then user must see an error message of "to create a scrap entry, a quantity is required" on the page
 

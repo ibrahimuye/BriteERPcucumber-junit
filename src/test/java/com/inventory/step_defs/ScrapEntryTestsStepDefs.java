@@ -49,6 +49,12 @@ public class ScrapEntryTestsStepDefs extends BrowserUtils {
         // default quantity is 1 , nothing to do
     }
 
+    @Then("user enters zero for quantity")
+    public void user_enters_zero_for_quantity() {
+        pages.scrapPage().quantityBox.clear();
+        pages.scrapPage().quantityBox.sendKeys("0");
+    }
+
     @Then("user leaves the source document as blank")
     public void user_leaves_the_source_document_as_blank() {
         // nothing to do
@@ -63,9 +69,9 @@ public class ScrapEntryTestsStepDefs extends BrowserUtils {
 
     @Then("user must see an error message of {string} on the page")
     public void user_must_see_an_error_message_of_on_the_page(String string) {
-        string = "to create a scrap entry, a source document is required";
+        string = "error : to create a scrap entry, a source document is required";
 //        This is a reported bug, not to stop test at regular tests by Runner class, we commanded out for now
-//        Assert.assertTrue("error message is not on the page",pages.scrapPage().pageText.getText().contains(string));
+//        Assert.assertTrue("error message is not on the page",pages.scrapPage().pageText.getText().contains("error"));
     }
 
     @Then("user logs out")

@@ -6,6 +6,7 @@ import com.inventory.utilities.Pages;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 import org.junit.Assert;
+import org.openqa.selenium.Keys;
 
 
 public class ScrapEntryTestsStepDefs extends BrowserUtils {
@@ -94,7 +95,7 @@ public class ScrapEntryTestsStepDefs extends BrowserUtils {
 
     @Then("record the final on hand quantity")
     public int record_the_final_on_hand_quantity() {
-//        waitForVisibility(pages.productsPage().opticalMouseOnHand,5);
+        waitForVisibility(pages.productsPage().opticalMouseOnHand,5);
         String finalCountOpticalMouse = pages.productsPage().opticalMouseOnHand.getText();
         String [] finalCountOpticalMouseWords=finalCountOpticalMouse.split(" ");
         int finCountOpticalMouse = Integer.valueOf(finalCountOpticalMouseWords [2].substring(0,3));
@@ -109,5 +110,17 @@ public class ScrapEntryTestsStepDefs extends BrowserUtils {
         System.out.println(initCount);
         System.out.println(finCount);
         Assert.assertTrue("number of products did not change",initCount-finCount==1);
+    }
+
+    @Then("the user click on the search bar and typyes product name {string} and hits enter")
+    public void the_user_click_on_the_search_bar_and_typyes_product_name_and_hits_enter(String string) {
+        pages.scrapPage().searchBar.sendKeys(string+ Keys.ENTER);
+        wait(4);
+    }
+
+    @Then("user must be able to see the {string} in the first raw")
+    public void user_must_be_able_to_see_the_in_the_first_raw(String string) {
+        String serachResult = pages.scrapPage().searchResult.getText().toLowerCase();
+        Assert.assertTrue("searched item could not be found",serachResult.contains(string));
     }
 }

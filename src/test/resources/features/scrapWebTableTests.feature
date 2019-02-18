@@ -1,4 +1,4 @@
-@uc
+@regression
 Feature: As an inventory user I should be able to sort the scrap web table according to any column header
 
   Background: login and going to the scrap page

@@ -1,4 +1,4 @@
-#@uc
+@regression
 Feature: As an inventory user I should be able discard some of the available quantity of any Stockable Product
   #*User Story :* As an inventory user I should be able discard some of the available quantity of any Stock-able Product
 	#
@@ -16,7 +16,7 @@ Feature: As an inventory user I should be able discard some of the available qua
     Then the title should be Inventory
     Then the user is already on the inventory page
 
-  @BRIT-4020
+  @BRIT-4020 @smoke
   Scenario: As an inventory user I should not be able to create scrap entry without source document
 
     Given the user is already on the inventory page
@@ -38,7 +38,7 @@ Feature: As an inventory user I should be able discard some of the available qua
 #  last phrase of the background is as same as first step of scenario to see that we all done in dry run
 #  we have extented step def classes to Browser utilities to use all useful methods
 
-  @BRIT-4120
+  @BRIT-4120 @smoke
   Scenario: As an inventory user I should be able discard any of the available quantity of any Stock-able Product
 
     Given the user is already on the inventory page
@@ -56,7 +56,7 @@ Feature: As an inventory user I should be able discard some of the available qua
     And user logs out
 
 
-  @BRIT-4121
+  @BRIT-4121 @smoke
   Scenario Outline: As an inventory user I should be able to search scrap data using "product name"
 
     Given the user is already on the inventory page

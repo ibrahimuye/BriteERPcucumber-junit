@@ -137,6 +137,13 @@ public class ScrapPage extends HomePage{
     @FindBy(xpath = "//table[@class='o_list_view table table-condensed table-striped o_list_view_ungrouped']//th[1]")
     public WebElement selectAllEntries;
 
+    @FindBy(xpath = "//table[@class='o_list_view table table-condensed table-striped o_list_view_ungrouped']//tr//td[2]")
+    public WebElement referenceCoulumn;
+
+
+
+
+
 
 
 

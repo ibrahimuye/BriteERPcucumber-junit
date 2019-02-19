@@ -25,7 +25,7 @@ public class BackgroundStepDefs extends BrowserUtils {
     @Then("the title should be Odoo")
     public void the_title_should_be_Odoo() {
 //        waitForPageToLoad(5);//interestingly with this wait the page title comes out missing
-        wait(4);
+        wait(6);
         Assert.assertEquals("page title is wrong","#Inbox - Odoo", Driver.getDriver().getTitle());
     }
 

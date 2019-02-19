@@ -1,4 +1,4 @@
-@uc
+
 Feature: As an inventory user I should be able discard some of the available quantity of any Stockable Product
   #*User Story :* As an inventory user I should be able discard some of the available quantity of any Stock-able Product
 	#

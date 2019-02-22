@@ -41,7 +41,7 @@ public class InvAdjustmentsItemPage extends HomePage {
     @FindBy(linkText = "Delete")
     public WebElement deleteButton;
 
-    @FindBy(linkText = "Duplicate")
+    @FindBy(xpath = "//button[@class='btn btn-sm btn-primary']")
     public WebElement deleteOkButton;
 
     @FindBy(xpath = "(//a[@data-index='1'])[1]")
@@ -68,7 +68,7 @@ public class InvAdjustmentsItemPage extends HomePage {
     @FindBy(xpath = "//div[@class='o_dialog_warning modal-body']")
     public WebElement validationDeleteErrorMessage;
 
-    @FindBy(xpath = "//div[@class='o_cp_searchview']")
+    @FindBy(xpath = "//div/div/ol/li[@class='active']")
     public WebElement newInvAdjHeader;
 
     @FindBy(xpath = "(//input[@class='o_radio_input'])[4]")

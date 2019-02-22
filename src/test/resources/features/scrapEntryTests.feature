@@ -1,4 +1,4 @@
-@uc
+
 Feature: As an inventory user I should be able discard some of the available quantity of any Stockable Product
   #*User Story :* As an inventory user I should be able discard some of the available quantity of any Stock-able Product
 	#
@@ -16,7 +16,7 @@ Feature: As an inventory user I should be able discard some of the available qua
     Then the title should be Inventory
     Then the user is already on the inventory page
 
-  @BRIT-4020 @scrap
+  @BRIT-4020 @smoke
   Scenario: As an inventory user I should not be able to create scrap entry without source document
 
     Given the user is already on the inventory page
@@ -38,39 +38,51 @@ Feature: As an inventory user I should be able discard some of the available qua
 #  last phrase of the background is as same as first step of scenario to see that we all done in dry run
 #  we have extented step def classes to Browser utilities to use all useful methods
 
-  @BRIT-4120 @scrap
+  @BRIT-4120 @smoke
   Scenario: As an inventory user I should be able discard any of the available quantity of any Stock-able Product
-  As an inventory user I should be able discard any of the available quantity of any Stock-able Product
 
     Given the user is already on the inventory page
-    Then Click on the Products link
+    When Click on the Products link
     And record the initial on hand quantity
-    Then user clicks on the scrap link
-    When the user is on the scrap page
-    Then user clicks on the Create button
-    Then user clicks on product drop down menu to choose a product
+    And user clicks on the scrap link
+    And the user is on the scrap page
+    And user clicks on the Create button
+    And user clicks on product drop down menu to choose a product
     And user uses default value of quantity
-    Then user clicks on save button and then validate button
-    Then Click on the Products link
+    And user clicks on save button and then validate button
+    And Click on the Products link
     And record the final on hand quantity
     Then user validates the number of on hand quantity at this stage is less than initial amount by scrapped amount
-    Then user logs out
+    And user logs out
 
 
-  @BRIT-4121 @uc
+  @BRIT-4121 @smoke
   Scenario Outline: As an inventory user I should be able to search scrap data using "product name"
-  As an inventory user I should be able to search scrap data using product name
 
     Given the user is already on the inventory page
-    Then user clicks on the scrap link
+    And user clicks on the scrap link
     When the user is on the scrap page
-    Then the user click on the search bar and typyes product name "<product>" and hits enter
+    And the user click on the search bar and typyes product name "<product>" and hits enter
     Then user must be able to see the "<product>" in the first raw
-    Then user logs out
+    And user logs out
 
     Examples:
 
       | product |
       | mouse   |
       | ipad    |
+
+
+  @BRIT-4122
+  Scenario: As an inventory user I should not be able to create scrap entry without quantity
+
+    Given the user is already on the inventory page
+    And user clicks on the scrap link
+    And the user is on the scrap page
+    And user clicks on the Create button
+    And user enters zero for quantity
+    When user clicks on product drop down menu to choose a product
+    And user clicks on save button and then validate button
+    Then user must see an error message of "to create a scrap entry, a quantity is required" on the page
+    And user logs out
 

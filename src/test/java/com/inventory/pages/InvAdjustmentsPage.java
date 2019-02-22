@@ -26,7 +26,7 @@ public class InvAdjustmentsPage extends HomePage {
     @FindBy(className = "o_facet_values")
     public WebElement searchDefaultValue;
 
-    @FindBy(xpath = "(//button[@class='o_dropdown_toggler_btn btn btn-sm dropdown-toggle'])[3]")
+    @FindBy(xpath = "(//div[@class='btn-group o_dropdown'])[3]")
     public WebElement filterDropdown;
 
     @FindBy(xpath = "(//button[@class='o_dropdown_toggler_btn btn btn-sm dropdown-toggle'])[4]")
@@ -88,7 +88,7 @@ public class InvAdjustmentsPage extends HomePage {
     @FindBy(xpath = "//td[@class='o_data_cell o_required_modifier']")
     public WebElement forDeleteTestFinalItem;
 
-    @FindBy(xpath = "//td[@class='o_data_cell o_required_modifier']")
+    @FindBy(xpath = "(//td[@class='o_data_cell o_readonly_modifier o_required_modifier'])[1]")
     public WebElement forValidationTestItem;
 
     @FindBy(xpath = "//td[@class='o_data_cell o_required_modifier']")

@@ -25,7 +25,7 @@ public class BackgroundStepDefs extends BrowserUtils {
     @Then("the title should be Odoo")
     public void the_title_should_be_Odoo() {
 //        waitForPageToLoad(5);//interestingly with this wait the page title comes out missing
-        wait(4);
+        wait(6);
         Assert.assertEquals("page title is wrong","#Inbox - Odoo", Driver.getDriver().getTitle());
     }
 
@@ -43,6 +43,6 @@ public class BackgroundStepDefs extends BrowserUtils {
 
     @Then("the user is already on the inventory page")
     public void that_the_user_is_already_on_the_inventory_page() {
-        Assert.assertEquals("url is wrog",Driver.getDriver().getCurrentUrl(), "http://52.39.162.23/web?#view_type=kanban&model=stock.picking.type&menu_id=366&action=488");
+        Assert.assertEquals("url is wrong",Driver.getDriver().getCurrentUrl(), "http://52.39.162.23/web?#view_type=kanban&model=stock.picking.type&menu_id=366&action=488");
     }
 }

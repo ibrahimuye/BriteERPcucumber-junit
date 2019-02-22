@@ -119,7 +119,7 @@ public class ScrapPage extends HomePage{
     @FindBy(xpath= "//input[@class='o_field_float o_field_number o_field_widget o_input o_required_modifier']")
     public WebElement quantityBox;
 
-    @FindBy(xpath = "/html/body/ul/li[8]/a")
+    @FindBy(partialLinkText = "Search More")
     public WebElement searchMore;
 
     @FindBy(xpath = "/html/body/ul/li[4]/a")
@@ -136,6 +136,13 @@ public class ScrapPage extends HomePage{
 
     @FindBy(xpath = "//table[@class='o_list_view table table-condensed table-striped o_list_view_ungrouped']//th[1]")
     public WebElement selectAllEntries;
+
+    @FindBy(xpath = "//table[@class='o_list_view table table-condensed table-striped o_list_view_ungrouped']//tr//td[2]")
+    public WebElement referenceCoulumn;
+
+
+
+
 
 
 

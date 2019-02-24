@@ -1,4 +1,4 @@
-@wip1
+@wip
 Feature:
 #3
   Background: login and going to the inventory

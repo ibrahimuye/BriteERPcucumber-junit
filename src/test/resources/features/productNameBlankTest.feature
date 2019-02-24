@@ -1,4 +1,4 @@
-@wip
+
 Feature:
 
   Background: login and going to the inventory

@@ -1,4 +1,4 @@
-package com.inventory.step_defs;
+package com.inventory.utilities.step_defs;
 
 import com.google.common.collect.Lists;
 import com.inventory.utilities.BrowserUtils;

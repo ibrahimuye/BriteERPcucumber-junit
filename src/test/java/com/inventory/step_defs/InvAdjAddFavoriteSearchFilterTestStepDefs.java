@@ -1,4 +1,4 @@
-package com.inventory.utilities.step_defs;
+package com.inventory.step_defs;
 
 import com.inventory.utilities.BrowserUtils;
 import com.inventory.utilities.Driver;
@@ -8,8 +8,6 @@ import cucumber.api.java.en.When;
 import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
-
-import static com.inventory.utilities.Driver.getDriver;
 
 public class InvAdjAddFavoriteSearchFilterTestStepDefs extends BrowserUtils {
 

@@ -1,6 +1,5 @@
 package com.inventory.step_defs;
 
-import com.inventory.pages.ProductsPage;
 import com.inventory.utilities.*;
 import cucumber.api.java.en.And;
 import cucumber.api.java.en.Given;

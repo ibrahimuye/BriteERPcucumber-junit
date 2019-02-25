@@ -1,4 +1,4 @@
-package com.inventory.utilities.step_defs;
+package com.inventory.step_defs;
 import com.inventory.utilities.Driver;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;

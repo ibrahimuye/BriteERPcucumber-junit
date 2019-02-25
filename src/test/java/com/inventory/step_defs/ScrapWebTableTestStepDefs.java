@@ -1,13 +1,11 @@
 package com.inventory.step_defs;
 
-import com.google.common.collect.Lists;
 import com.inventory.utilities.BrowserUtils;
 import com.inventory.utilities.Driver;
 import com.inventory.utilities.Pages;
 import cucumber.api.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 
 import java.util.Collections;
 import java.util.List;

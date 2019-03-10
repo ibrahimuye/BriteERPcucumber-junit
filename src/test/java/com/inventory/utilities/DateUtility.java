@@ -1,4 +1,4 @@
-package com.cybertek.utilities;
+package com.inventory.utilities;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;

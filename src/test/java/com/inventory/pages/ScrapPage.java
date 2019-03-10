@@ -17,6 +17,11 @@ public class ScrapPage extends HomePage{
     @FindBy(xpath = "//table[@class='o_list_view table table-condensed table-striped o_list_view_ungrouped']//th[2]")
     public WebElement referenceOnWebTable;
 
+
+    @FindBy(xpath = " //table[@class='o_list_view table table-condensed table-striped o_list_view_ungrouped']//tr[1]//td[2]")
+    public WebElement lastreferenceOnWebTable;
+
+
     @FindBy(xpath = "//table[@class='o_list_view table table-condensed table-striped o_list_view_ungrouped']//th[3]")
     public WebElement secondHeaderOfWebTable;
     @FindBy(xpath = "//table[@class='o_list_view table table-condensed table-striped o_list_view_ungrouped']//th[3]")

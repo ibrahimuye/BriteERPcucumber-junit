@@ -10,8 +10,5 @@
         <module name="BriteERPcucumberjunit" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="BriteERPcucumber-junit" target="8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

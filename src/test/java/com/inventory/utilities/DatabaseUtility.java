@@ -1,11 +1,5 @@
-package com.cybertek.utilities;
-
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.sql.Statement;
+package com.inventory.utilities;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -20,10 +14,9 @@ public class DatabaseUtility {
 
 
     public static void createConnection() {
-        String url = "jdbc:postgresql://room-reservation-qa.cxvqfpt4mc2y.us-east-1.rds.amazonaws.com:5432/room_reservation_qa";
-        String user = "qa_user";
-        String password = "Cybertek11!";
-
+        String url = "jdbc:postgresql://54.148.96.210:5432/BriteErpDemo";
+        String user = "podoo";
+        String password = "podoo";
 
         try {
             connection = DriverManager.getConnection(url, user, password);

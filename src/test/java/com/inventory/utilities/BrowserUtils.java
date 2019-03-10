@@ -248,7 +248,7 @@ public class BrowserUtils {
         return webElement;
     }
 
-    public  WebElement clickByPartialText (String string){
+    public static WebElement clickByPartialText(String string){
         WebElement webElement = Driver.getDriver().findElement(By.partialLinkText(string));
         return webElement;
     }

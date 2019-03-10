@@ -13,13 +13,22 @@ Feature: As an inventory user I should be able discard any Product and see the s
 @BRIT-4458  @db
 Scenario: As an inventory user I should be able to create scrap entry and see the same ref no in DB
 
-Given the user is already on the inventory page
-And user clicks on the scrap link
-And the user is on the scrap page
-And user clicks on the Create button
-And user uses default value of quantity
-When user clicks on product drop down menu to choose a product
-And user clicks on save button and then validate button
-And user clicks on the scrap link
-Then user must see the reference number of the entry in DB
-And user logs out
+  Given the user is already on the inventory page
+  And user clicks on the scrap link
+  And the user is on the scrap page
+  And user clicks on the Create button
+  And user uses default value of quantity
+  When user clicks on product drop down menu to choose a product
+  And user clicks on save button and then validate button
+  And user clicks on the scrap link
+  Then user must see the reference number of the entry in DB
+  And user logs out
+
+  @BRIT-4461 @db
+Scenario:  As an inventory user I should be able to modify any scrap entry at UI confirm in DB
+
+  Given the user is already on the inventory page
+  And user clicks on the scrap link
+  And the user is on the scrap page
+  Then user edits the source document data of the latest entry and confirms the change in DB
+  And user logs out

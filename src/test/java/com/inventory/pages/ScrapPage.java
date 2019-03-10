@@ -105,6 +105,9 @@ public class ScrapPage extends HomePage{
     @FindBy(xpath = "//label[@class='btn btn-primary']")
     public WebElement loadFileButton;
 
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div[1]/div[2]/div[1]/div/div[1]/button[1]")
+    public WebElement editButton;
+
 
 
 
@@ -144,6 +147,9 @@ public class ScrapPage extends HomePage{
 
     @FindBy(xpath = "//table[@class='o_list_view table table-condensed table-striped o_list_view_ungrouped']//tr//td[2]")
     public WebElement referenceCoulumn;
+
+    @FindBy(xpath = "//input[@class='o_field_char o_field_widget o_input']")
+    public WebElement sourceDocInput;
 
 
 

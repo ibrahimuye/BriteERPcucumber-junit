@@ -1,4 +1,4 @@
-@uc
+
 Feature: As an inventory user I should be able discard any Product and see the same records in DB
 
   Background: login and going to the inventory
@@ -32,3 +32,23 @@ Scenario:  As an inventory user I should be able to modify any scrap entry at UI
   And the user is on the scrap page
   Then user edits the source document data of the latest entry and confirms the change in DB
   And user logs out
+
+
+
+  @BRIT-4462  @uc    @db
+Scenario Outline:    As an inventory user I should be able to create new products and verify in DB
+
+  Given the user is already on the inventory page
+  And user clicks on the products link
+  And user clicks on the create button
+  And user types the name of "<product>"
+  And user click on the save button
+  Then user validates the "<product>" in DB
+  And user logs out
+
+  Examples:
+    | product |
+    | Samsung Galaxy S6 active SM-G890A |
+    | Samsung Galaxy S7 active SM-G895B |
+    | Samsung Galaxy S8 active SM-G899C|
+

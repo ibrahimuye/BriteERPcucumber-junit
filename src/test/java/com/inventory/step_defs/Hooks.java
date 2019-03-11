@@ -1,4 +1,5 @@
 package com.inventory.step_defs;
+import com.inventory.utilities.DatabaseUtility;
 import com.inventory.utilities.Driver;
 import cucumber.api.Scenario;
 import cucumber.api.java.After;
@@ -33,6 +34,15 @@ public class Hooks {
 
 //        System.out.println("Closing driver");
         Driver.closeDriver();
+    }
+    @Before(value = "@db")
+    public void setUpDBConnection(){
+        DatabaseUtility.createConnection();
+    }
+
+    @After(value = "@db")
+    public void closeDBConnection(){
+        DatabaseUtility.closeConnection();
     }
 
 

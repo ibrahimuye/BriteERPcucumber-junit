@@ -148,11 +148,13 @@ public class BrowserUtils {
     }
 
 
+
+
     /**
      * Waits for element to be not stale
      * @param element
      */
-    public void waitForStaleElement(WebElement element) {
+    public static void waitForStaleElement(WebElement element) {
         int y = 0;
         while (y <= 15) {
             if(y==1)
@@ -248,7 +250,7 @@ public class BrowserUtils {
         return webElement;
     }
 
-    public  WebElement clickByPartialText (String string){
+    public static WebElement clickByPartialText(String string){
         WebElement webElement = Driver.getDriver().findElement(By.partialLinkText(string));
         return webElement;
     }

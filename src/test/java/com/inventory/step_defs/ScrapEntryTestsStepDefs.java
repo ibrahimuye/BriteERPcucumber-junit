@@ -38,7 +38,7 @@ public class ScrapEntryTestsStepDefs extends BrowserUtils {
     public void user_clicks_on_product_drop_down_menu_to_choose_a_product() {
         wait(4);
         pages.scrapPage().productBox.click();
-        wait(4);
+        wait(8);
         pages.scrapPage().searchMore.click();
         wait(4);
         pages.scrapPage().mouseOptical.click();
@@ -91,9 +91,12 @@ public class ScrapEntryTestsStepDefs extends BrowserUtils {
 
     @Then("record the initial on hand quantity")
     public int record_the_initial_on_hand_quantity() {
+
+
+        BrowserUtils.clickByPartialText("Mouse, Optical").click();
         String initialCountOpticalMouse = pages.productsPage().opticalMouseOnHand.getText();
-        String [] initCountOpticalMouseWords=initialCountOpticalMouse.split(" ");
-        int initCountOpticalMouse = Integer.valueOf(initCountOpticalMouseWords [2].substring(0,3));
+        initialCountOpticalMouse = initialCountOpticalMouse.replace(",","").substring(0,initialCountOpticalMouse.indexOf("."));
+        int initCountOpticalMouse = Integer.valueOf(initialCountOpticalMouse);
         System.out.println("initial cunt is : "+initCountOpticalMouse);
         initCount = initCountOpticalMouse;
         return initCountOpticalMouse;

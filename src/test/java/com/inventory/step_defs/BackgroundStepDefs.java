@@ -43,6 +43,6 @@ public class BackgroundStepDefs extends BrowserUtils {
 
     @Then("the user is already on the inventory page")
     public void that_the_user_is_already_on_the_inventory_page() {
-        Assert.assertEquals("url is wrong",Driver.getDriver().getCurrentUrl(), "http://52.39.162.23/web?#view_type=kanban&model=stock.picking.type&menu_id=366&action=488");
+        Assert.assertEquals("url is wrong",Driver.getDriver().getCurrentUrl(), "http://54.148.96.210/web?#view_type=kanban&model=stock.picking.type&menu_id=366&action=488");
     }
 }

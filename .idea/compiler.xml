@@ -7,11 +7,10 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="BriteERPcucumber-junit" />
-        <module name="BriteERPcucumberjunit" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="BriteERPcucumber-junit" target="8" />
+      <module name="BriteERPcucumberjunit" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

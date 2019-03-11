@@ -21,7 +21,11 @@ public class ProductsPage extends HomePage {
     public WebElement productSearchBox;
     @FindBy(xpath = "//div[@class='oe_kanban_details']")
     public WebElement productFoundProduct;
-    @FindBy(xpath = "//div[@class='o_notification_content']")
+
+    @FindBy(xpath = "( //table[@class='o_list_view table table-condensed table-striped o_list_view_ungrouped']//tr[1]//td[4])[1]")
+    public WebElement searchResult;
+   // @FindBy(xpath = "//div[@class='o_notification_content']")
+    @FindBy(xpath = "/html/body/div[1]/div[2]/div[2]/div/div/div/div[1]/div[2]/strong/span")
     public WebElement productNotificationMessage;
     @FindBy(xpath = "//button[@class='btn btn-sm btn-default']")
     public WebElement crtCategoryCancelButton;

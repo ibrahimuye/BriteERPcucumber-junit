@@ -9,8 +9,6 @@ import org.junit.Assert;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.Keys;
 
-import static com.inventory.utilities.Driver.getDriver;
-
 public class InvAdjAddFavoriteSearchFilterTestStepDefs extends BrowserUtils {
 
     Pages pages = new Pages();

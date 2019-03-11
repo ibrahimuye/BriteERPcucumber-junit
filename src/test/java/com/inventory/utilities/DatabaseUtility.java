@@ -53,6 +53,7 @@ public class DatabaseUtility {
      *         The rest of the data will be ignored
      */
     public static Object getCellValue(String query) {
+
         return getQueryResultList(query).get(0).get(0);
     }
 

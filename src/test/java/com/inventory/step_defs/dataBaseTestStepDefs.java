@@ -1,18 +1,17 @@
 package com.inventory.step_defs;
 
-import com.inventory.utilities.BrowserUtils;
-import com.inventory.utilities.DatabaseUtility;
-import com.inventory.utilities.Driver;
-import com.inventory.utilities.Pages;
+import com.inventory.utilities.*;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import org.junit.Assert;
 import org.openqa.selenium.interactions.Actions;
 
-public class dataBaseTestStepDefs extends BrowserUtils {
+public class DataBaseTestStepDefs extends BrowserUtils {
 
     Pages pages = new Pages();
     Actions actions = new Actions(Driver.getDriver());
+
+
 
     @Then("user must see the reference number of the entry in DB")
     public void user_must_see_the_reference_number_of_the_entry_in_DB() {
